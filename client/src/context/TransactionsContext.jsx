@@ -90,7 +90,7 @@ export const TransactionsProvider = ({ children }) => {
           from: currentAccount,
           to: addressTo,
           gas: "0x5208",
-          value: parsedAmount,
+          value: parsedAmount._hex,
         }],
       });
       console.log("Transaction sent");
