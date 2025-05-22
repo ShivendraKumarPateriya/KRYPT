@@ -24,7 +24,7 @@ export const TransactionsProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     addressTo: "",
-    amount: "",
+    amount: "", //why string?? -->>correct
     keyword: "",
     message: "",
   });
@@ -90,7 +90,7 @@ export const TransactionsProvider = ({ children }) => {
           from: currentAccount,
           to: addressTo,
           gas: "0x5208",
-          value: parsedAmount._hex,
+          value:'0x' + parsedAmount.toString(16),
         }],
       });
       console.log("Transaction sent");
